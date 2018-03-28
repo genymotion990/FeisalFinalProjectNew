@@ -5,13 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-
+    android:background="@drawable/aa12"
     tools:context="com.example.hp1.myapplication1.MainActivity"
     android:weightSum="1">
 
     <ListView
         android:id="@+id/list1"
         android:layout_width="match_parent"
-        android:layout_height="430dp"
-        android:cacheColorHint="@android:color/black" />
+        android:layout_height="301dp"
+        android:cacheColorHint="@android:color/black"
+        android:layout_weight="0.88" />
+
+    <Button
+        android:text="routes "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btt3" />
+
+    <TextView
+        android:text="you can also snap a picture of your personal bike and view it in the camera activity (by clicking on camera button below)"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5" />
+
+    <Button
+        android:text="camera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btt2" />
 </LinearLayout>
