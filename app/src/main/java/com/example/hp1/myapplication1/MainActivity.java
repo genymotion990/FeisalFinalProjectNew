@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     Button btt3,btt2;
 
     @Override
+    /*
+    * main page
+    * */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);

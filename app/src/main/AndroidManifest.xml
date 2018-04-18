@@ -78,7 +78,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".Reset" />
-        <activity android:name=".Profile" />
     </application>
 
 </manifest>

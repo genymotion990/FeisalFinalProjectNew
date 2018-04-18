@@ -31,6 +31,9 @@ public class Camera extends AppCompatActivity implements View.OnClickListener {
     SharedPreferences preferences;
 
     @Override
+    /*
+    * activity that uses camera to snap the user's bike
+    * */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
