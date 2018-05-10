@@ -78,6 +78,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Reset" />
+        <service android:name=".MyService"/>
     </application>
 
 </manifest>

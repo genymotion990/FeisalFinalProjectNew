@@ -3,6 +3,9 @@ package com.example.hp1.myapplication1;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -10,13 +13,15 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener ,View.OnClickListener {
     ListView list1;
     ArrayAdapter<String> adapter;
     ArrayList<Item> arr=new ArrayList<Item>();
-
+    private FirebaseAuth auth;
     Button btt3,btt2;
 
     @Override
@@ -43,7 +48,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         CustomAdapter adp=new CustomAdapter(this,R.layout.custom_row,arr);
         list1.setAdapter(adp);
         list1.setOnItemClickListener(this);
-
+        //plays background music
+        Intent sr = new Intent(this, MyService.class);
+        startService(sr);
     }
 
     @Override
@@ -62,5 +69,27 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             startActivity(new Intent(this,MapsActivity.class));
         else if(view==btt2)
              startActivity(new Intent(this,Camera.class));
+    }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.app_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId())
+        {
+            case R.id.logOut:
+                //Get Firebase auth instance
+                auth = FirebaseAuth.getInstance();
+                auth.signOut();
+
+                    startActivity(new Intent(MainActivity.this, Login.class));
+
+
+                break;
+            }
+        return true;
     }
 }

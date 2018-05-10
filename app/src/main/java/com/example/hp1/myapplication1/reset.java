@@ -21,6 +21,9 @@ public class Reset extends AppCompatActivity {
     private ProgressBar progressBar;
 
     @Override
+    /*
+    * activty that reset password
+    * */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset);
